@@ -5,21 +5,72 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637766378943747331
-    m_Hash: 4007186375
+      ticks: 637766381210541995
+    m_Hash: 4038762735
   m_LockFileStatus:
     m_FilePath: C:/Projects/EcsLiteShooter/EcsLiteShooter/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 637766379011537103
-    m_Hash: 38571225
+      ticks: 637766381510033676
+    m_Hash: 3449185160
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_PackageAssets:
   m_Packages:
     m_ResolvedPackages:
+    - packageId: com.leopotam.ecslite@https://github.com/Leopotam/ecslite.git
+      testable: 0
+      isDirectDependency: 1
+      version: 2021.12.22
+      source: 5
+      resolvedPath: C:\Projects\EcsLiteShooter\EcsLiteShooter\Library\PackageCache\com.leopotam.ecslite@0b7f9c8b1a
+      assetPath: Packages/com.leopotam.ecslite
+      name: com.leopotam.ecslite
+      displayName: LeoECS Lite
+      author:
+        name: Leopotam
+        email: 
+        url: 
+      category: 
+      type: 
+      description: LeoECS Lite is lightweight C# Entity Component System framework
+        based on structs. Performance, zero/small memory allocations/footprint, no
+        dependency on fucking Unity engine - main goals of this project.
+      status: 4
+      errors: []
+      versions:
+        all: []
+        compatible: []
+        verified: 
+      dependencies: []
+      resolvedDependencies: []
+      keywords:
+      - leoecslite
+      - leoecs
+      - ecs
+      - performance
+      registry:
+        id: 
+        name: 
+        url: 
+        scopes: []
+        isDefault: 0
+        capabilities: 0
+      hasRegistry: 0
+      hideInEditor: 1
+      entitlements:
+        isAllowed: 1
+      isAssetStorePackage: 0
+      datePublishedTicks: 0
+      documentationUrl: 
+      hasRepository: 1
+      repository:
+        type: git
+        url: https://github.com/Leopotam/ecslite.git
+        revision: 
+        path: 
     - packageId: com.unity.collab-proxy@1.3.9
       testable: 0
       isDirectDependency: 1
