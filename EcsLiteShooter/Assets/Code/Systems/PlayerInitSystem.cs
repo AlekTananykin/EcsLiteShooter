@@ -1,17 +1,39 @@
 using Leopotam.EcsLite;
+using Leopotam.EcsLite.Di;
+
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 public class PlayerInitSystem : IEcsInitSystem
 {
-    private EcsWorld _ecsWorld;
-    private StaticData _staticData;
-    private SceneData _sceneData;
+    [EcsWorld]
+    readonly private EcsWorld _ecsWorld = default;
+
+    [EcsInject]
+    private StaticData _staticData = default;
+
+    [EcsInject]
+    private SceneData _sceneData = default;
+
     public void Init(EcsSystems systems)
     {
         int playerEntity = _ecsWorld.NewEntity();
-        ref var player = ref playerEntity.Get<Player>();
-        ref var inputData = ref playerEntity.Get<PlayerInputData>();
 
+        AddPlayer(playerEntity);
+        AddInputSystem(playerEntity);
+    }
+
+    private void AddInputSystem(int playerEntity)
+    {
+        var inputPool = _ecsWorld.GetPool<PlayerInputData>();
+        inputPool.Add(playerEntity);
+    }
+
+    private void AddPlayer(int playerEntity)
+    {
+        var playerPool = _ecsWorld.GetPool<Player>();
+        ref var player = ref playerPool.Add(playerEntity);
+         
         GameObject playerGO = Object.Instantiate(_staticData.PlayerPrefab,
             _sceneData.PlayerSpawnPoint.position, Quaternion.identity);
 
@@ -19,4 +41,7 @@ public class PlayerInitSystem : IEcsInitSystem
         player.PlayerSpeed = _staticData.PlayerSpeed;
         player.PlayerTransform = playerGO.transform;
     }
+
+
+
 }

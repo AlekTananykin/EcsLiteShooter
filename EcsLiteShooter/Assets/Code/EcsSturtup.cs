@@ -1,6 +1,7 @@
 
 
 using Leopotam.EcsLite;
+using Leopotam.EcsLite.Di;
 using UnityEngine;
 
 public class EcsSturtup : MonoBehaviour
@@ -23,7 +24,8 @@ public class EcsSturtup : MonoBehaviour
 
         _updateSystems
             .Add(new PlayerInitSystem())
-            .Add(new PlayerInputSystem());
+            .Add(new PlayerInputSystem())
+            .Inject(Configuration, SceneData);
 
         _fixedUpdateSystem
             .Add(new PlayerMoveSystem());
@@ -35,7 +37,6 @@ public class EcsSturtup : MonoBehaviour
     void Update()
     {
         _updateSystems.Run();
-
     }
 
     private void FixedUpdate()

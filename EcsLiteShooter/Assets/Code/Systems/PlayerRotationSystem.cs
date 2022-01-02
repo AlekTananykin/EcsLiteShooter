@@ -1,9 +1,11 @@
 using Leopotam.EcsLite;
+using Leopotam.EcsLite.Di;
 using UnityEngine;
 
 public class PlayerRotationSystem : IEcsRunSystem
 {
-    private SceneData _sceneData;
+    [EcsInject]
+    private SceneData _sceneData = default;
 
     public void Run(EcsSystems systems)
     {

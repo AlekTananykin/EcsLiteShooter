@@ -5,7 +5,6 @@ public class PlayerInputSystem : IEcsRunSystem
 {
     public void Run(EcsSystems systems)
     {
-
         var world = systems.GetWorld();
         var selectedEntities = world.Filter<PlayerInputData>().End();
         var inputPool = world.GetPool<PlayerInputData>();
