@@ -28,7 +28,9 @@ public class EcsSturtup : MonoBehaviour
             .Inject(Configuration, SceneData);
 
         _fixedUpdateSystem
-            .Add(new PlayerMoveSystem());
+            .Add(new PlayerMoveSystem())
+            .Add(new PlayerRotationSystem())
+            .Inject(SceneData);
 
         _updateSystems.Init();
         _fixedUpdateSystem.Init();
